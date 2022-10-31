@@ -26,14 +26,14 @@ targets: [
         name: "YOUR_TARGET",
         dependencies: [],
         plugins: [
-            .plugin(name: "SwiftGenPlugin", package: "SwiftGenPlugin")
+            .plugin(name: "SwiftGenBuildPlugin", package: "SwiftGenPlugin")
         ]
     ),
 ```
 
 ## Add to Project
 
-Add this package to your project dependencies. Select a target and open the `Build Phases` inspector. Open `Run Build Tool Plug-ins` and add `SwiftGenPlugin` from the list.
+Add this package to your project dependencies. Select a target and open the `Build Phases` inspector. Open `Run Build Tool Plug-ins` and add `SwiftGenBuildPlugin` from the list.
 
 ## SwiftGen config
 

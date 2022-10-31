@@ -6,17 +6,17 @@ import PackageDescription
 let package = Package(
     name: "SwiftGenPlugin",
     products: [
-        .plugin(name: "SwiftGen", targets: ["SwiftGen"]),
+        .plugin(name: "SwiftGenBuildPlugin", targets: ["SwiftGenBuildPlugin"]),
         .plugin(name: "SwiftGenPlugin", targets: ["SwiftGenPlugin"])
     ],
     targets: [
         .plugin(
-            name: "SwiftGenPlugin",
+            name: "SwiftGenBuildPlugin",
             capability: .buildTool(),
             dependencies: ["swiftgen"]
         ),
         .plugin(
-            name: "SwiftGen",
+            name: "SwiftGenPlugin",
             capability: .command(
                 intent: .custom(verb: "swiftgen", description: "Creates type-safe for all your resources"),
                 permissions: [
