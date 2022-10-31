@@ -31,8 +31,7 @@ struct SwiftGenCommand: CommandPlugin {
     func performCommand(context: PluginContext, arguments: [String]) async throws {
         let (targets, arguments) = parse(
             arguments: arguments,
-            targets: context.package.targets.map(\.name),
-            cache: context.pluginWorkDirectory
+            targets: context.package.targets.map(\.name)
         )
         let swiftgen = try context.tool(named: "swiftgen").path
 
@@ -57,8 +56,7 @@ struct SwiftGenCommand: CommandPlugin {
 private extension SwiftGenCommand {
     func parse(
         arguments: [String],
-        targets allTargets: @autoclosure () -> [String],
-        cache: Path
+        targets allTargets: @autoclosure () -> [String]
     ) -> (targets: [String], arguments: [String]) {
         var extractor = ArgumentExtractor(arguments)
         var targets = extractor.extractOption(named: "target")
@@ -111,8 +109,7 @@ extension SwiftGenCommand: XcodeCommandPlugin {
     func performCommand(context: XcodePluginContext, arguments: [String]) throws {
         let (targets, arguments) = parse(
             arguments: arguments,
-            targets: context.xcodeProject.targets.map(\.displayName),
-            cache: context.pluginWorkDirectory
+            targets: context.xcodeProject.targets.map(\.displayName)
         )
         let swiftlint = try context.tool(named: "swiftgen").path
 
