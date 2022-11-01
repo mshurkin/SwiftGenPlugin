@@ -1,7 +1,6 @@
 //
 //  SwiftGenBuildTool.swift
 //
-//  Created by Максим Шуркин on 26.10.2022.
 //  Copyright © 2022 Maxim Shurkin
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -40,7 +39,7 @@ struct SwiftGenBuiltTool: BuildToolPlugin {
 
         return [
             .prebuildCommand(
-                displayName: "Run SwiftGen",
+                displayName: "Run SwiftGen for \(target.name)",
                 executable: try context.tool(named: "swiftgen").path,
                 arguments: [
                     "config", "run",
@@ -87,7 +86,7 @@ extension SwiftGenBuiltTool: XcodeBuildToolPlugin {
 
         return [
             .prebuildCommand(
-                displayName: "Run SwiftGen",
+                displayName: "Run SwiftGen for \(target.displayName)",
                 executable: try context.tool(named: "swiftgen").path,
                 arguments: [
                     "config", "run",

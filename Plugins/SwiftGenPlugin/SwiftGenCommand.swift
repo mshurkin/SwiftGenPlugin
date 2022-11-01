@@ -1,7 +1,6 @@
 //
 //  SwiftGenCommand.swift
 //
-//  Created by Максим Шуркин on 26.10.2022.
 //  Copyright © 2022 Maxim Shurkin
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
